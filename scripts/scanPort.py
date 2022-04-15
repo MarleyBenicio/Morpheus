@@ -49,6 +49,7 @@ def scannerP():
                 finally:
                     scan.close()
         logPortasAbertas.close()
+        os.system("touch Files/Logs/Portas/"+host+".log")
         verif = open("Files/Logs/Portas/"+host+".log","r")
         txt = verif.read()
         if txt == "":pass
@@ -64,6 +65,7 @@ def scannerP():
     #    menu.opcoes()
     #else:
     host = socket.gethostbyname(host)
+    os.system("touch Files/Logs/Portas/"+host+".log")
     logPortasAbertas = open("Files/Logs/Portas/"+host+".log","w")
     print("\33[33m"+"Para verificar apenas uma porta, insira a porta desejada em "+"\33[33m"+"porta inicial "+"\33[33m"+"e "+"\33[33m"+"0"+"\33[33m"+" na porta final")
     porta = int(input("\033[33m"+"Digite a porta inicial: "))
